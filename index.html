@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .content
+        {
+            display: flex;
+        }
+        .character
+        {
+            border: 1px solid green;
+            width: 300px;
+            padding: 15px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h2 style="text-align: center;">Game of trones Characters</h2>
+    <div class="content">
+
+    </div>
+
+    <script src="data.js"></script>
+    <script>
+const usersData = JSON.parse(character);
+const content = document.querySelector(".content");
+
+usersData.forEach(element => {
+    const div = document.createElement("div");
+div.classList.add("character");
+    content.appendChild(div);
+const charName = document.createElement("h3");
+charName.textContent = element.name;
+div.appendChild(charName);
+const chargen = document.createElement("p");
+chargen.textContent = element.gender;
+div.appendChild(chargen);
+const born = document.createElement("p");
+born.textContent = element.born;
+div.appendChild(born);
+const title = document.createElement("p");
+title.textContent= element.titles;
+div.appendChild(title);
+});
+    </script>
+</body>
+</html>
